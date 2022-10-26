@@ -51,9 +51,9 @@ class DataFormatter {
 //            ];
 //            $response->response('sendMessage', $trelloKeyLink);
         }
-        else {
+//        else {
 //            https://www.youtube.com/watch?v=-kJqEL_BmHk&ab_channel=%D0%97%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D1%8C%D0%B1%D0%BE%D1%82%D0%B0
-        }
+//        }
         /////////////////////////
 //        else {
 //                $url = "https://trello.com/1/authorize?expiration=1day&name=MyPersonalToken&scope=read&response_type=token&key=" . $this->getMessage();
