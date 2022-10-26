@@ -7,16 +7,15 @@ include 'DataFormatter.php';
 $a = new DataFormatter();
 //echo($a->data);
 //$cl = new DatabaseInfo();
-//
 //function a() {
 //    $data=json_decode(file_get_contents("php://input"),true, 20, JSON_OBJECT_AS_ARRAY);
 //    if($data!=null) {
 //        file_put_contents('data.json', json_encode($data));
-//        refresh( 1 );
+//        refresh( 4 );
 //    }
 //    else {
 //        echo (is_object($data));
-//        refresh( 1);
+//        refresh( 4);
 //    }
 //}
 //function refresh($time){
@@ -115,11 +114,11 @@ catch (PDOException $e) {
 //    $data=json_decode(file_get_contents("php://input"),true, 20, JSON_OBJECT_AS_ARRAY);
 //    if($data!=null) {
 //        file_put_contents('data.json', json_encode($data));
-//        refresh( 100 );
+//        refresh( 3);
 //    }
 //    else {
 //        echo (is_object($data));
-//        refresh( 100);
+//        refresh( 3);
 //    }
 //}
 //function refresh( $time){
@@ -128,6 +127,7 @@ catch (PDOException $e) {
 //    $ret = json_decode(file_get_contents('data.json'), true);
 //    echo $ret['message']['from']['first_name'];
 //    echo $ret['message']['from']['id'];
+//    echo $ret['callback_query']['data'];
 //    echo "<pre>";
 //    print_r($ret);
 //    echo "</pre>";
@@ -146,13 +146,14 @@ catch (PDOException $e) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Trello Authorization</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <link rel="stylesheet" href="dist/css/style.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
 <div class='main'>
     <form id="validation" class="form_validation">
-        <label for="api_key">Please, enter Your Key:</label>
+        <label for="api_key">Упс, а тут тєма така, щоб прочитать мої побажання, потрібно ввести номер накладної твого подарунку, який мандрує світом разом з новою поштою.<br> P.S  Планував приїхати, але Назар підвів :( </label>
         <input type="text" id="api_key">
         <input type="button" id="submit_btn" class="submit" value="Submit">
     </form>

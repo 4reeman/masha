@@ -32,26 +32,31 @@ class DataFormatter {
 //        ];
 //        $response->response('restrictChatMember', $par);
         if ($this->getMessage() == '/start') {
-            $response->response('sendMessage', ['chat_id' => $this->getChatId(), 'text' => 'Hi, ' . $this->getUserName()]);
-//            $db = new DatabaseInfo();
-//            $db->insertData($this->getUserId(), $this->getUserName(), $this->getChatId());
-//            $response->response('sandMessage', ['chat_id' => $this->getChatId(), 'pls, copy your personal key']);
-//            $keyboard = [
-//                'inline_keyboard' => [
-//                    [
-//                        ['text' => 'Trello Authorization', 'url' => 'https://server4reema.vps.webdock.cloud/']
-//                    ]
-//                ]
-//            ];
-//            $encodedKeyboard = json_encode($keyboard);
-//            $trelloKeyLink = [
-//                'chat_id' => $this->getChatId(),
-//                'text' => 'Tap this one',
-//                'reply_markup' => $encodedKeyboard,
-//            ];
-//            $response->response('sendMessage', $trelloKeyLink);
+            $response->response('sendMessage', ['chat_id' => $this->getChatId(), 'text' => 'Привіт, ' . $this->getUserName() . ')']);
+            $db = new DatabaseInfo();
+            $db->insertData($this->getUserId(), $this->getUserName(), $this->getChatId());
+            $keyboard = [
+                'inline_keyboard' => [
+                    [
+                        ['text' => 'Тикни синє меню ', 'url'=>'https://mashbirthday.vps.webdock.cloud/'],
+                    ]
+                ]
+            ];
+            $encodedKeyboard = json_encode($keyboard);
+            $trelloKeyLink = [
+                'chat_id' => $this->getChatId(),
+                'text' => 'Цей бот не забуває про дн близьких йому людей',
+                'reply_markup' => $encodedKeyboard,
+            ];
+            $response->response('sendMessage', $trelloKeyLink);
+//            switch($this->getQuery()){
+//                case '/yes':
+//                    $response->response('sendMessage', ['chat_id' => $this->getChatId(), 'text' => 'Hi, ' . $this->getUserName()]);
+//                    break;
+//            }
         }
 //        else {
+
 //            https://www.youtube.com/watch?v=-kJqEL_BmHk&ab_channel=%D0%97%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D1%8C%D0%B1%D0%BE%D1%82%D0%B0
 //        }
         /////////////////////////
@@ -119,5 +124,10 @@ class DataFormatter {
     protected function getMessage() {
         return $this->data['message']['text'];
     }
-
+    protected function getQuery() {
+        return $this->data['callback_query']['data'];
+    }
+    protected function getUpdateId() {
+        return $this->data['callback_query']['message']['message_id'];
+    }
 }

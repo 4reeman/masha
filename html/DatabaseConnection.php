@@ -3,9 +3,9 @@
 Class DatabaseConnection {
 
     final const HOST = 'localhost;';
-    final const DBNAME = 'server4reema';
-    final const USERNAME = 'server4reema';
-    final const PASSWORD = 'DbXDPn9ExgMg';
+    final const DBNAME = 'mashbirthday';
+    final const USERNAME = 'mashbirthday';
+    final const PASSWORD = 'EWrZNZptuBJq';
     final const DEV = [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION];
     final const DSN = 'mysql:host=' . self::HOST . 'dbname=' . self::DBNAME;
 
